@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: appium/WebDriverAgent
-          ref: master
+          ref: v5.8.5
 
       - name: Build WebDriverAgentRunner (unsigned)
         run: |
@@ -29,7 +29,7 @@ jobs:
             -derivedDataPath ./build \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
-            | xcbeautify || true
+            | xcbeautify
 
       - name: Package .app into an unsigned .ipa
         run: |
